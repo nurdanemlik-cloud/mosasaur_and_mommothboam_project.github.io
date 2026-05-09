@@ -111,74 +111,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
   line-height: 1.7;
 }
 
-/* Main text container */
-#passages {
-  max-width: 750px;
-  margin: auto;
-  padding: 40px;
-}
-
-/* Passage visual card (cinematic panel) */
-tw-story {
-  display: block;
-  background: rgba(10, 10, 10, 0.70);
-  backdrop-filter: blur(10px);
-  border-radius: 14px;
-  padding: 50px;
-  box-shadow: 0 0 40px rgba(0,0,0,0.6);
-}
-
-/* Links (navigation) */
-
-/* Normal link */
-.link-internal {
-  color: #d6b46d !important;
-  transition: all 0.3s ease;
-}
-
-/* Hover */
-.link-internal:hover {
-  color: #ffffff !important;
-  text-shadow: 0 0 8px rgba(214,180,109,0.6);
-}
-
-/* Tıklanmış link */
-.link-internal.link-visited {
-  color: #7a5a2a !important;
-}
-
-/* Smooth passage transitions */
-tw-passage {
-  display: block;
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-/* Optional: STOP identity styling via passage name */
-tw-passage[name^="stop"] {
-  animation: fadeIn 0.8s ease;
-}
-
-/* Fade-in effect */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-body {
-  background-color: #0b0c10;
-  color: #e8e6e3;
-  font-family: Georgia, serif;
-  line-height: 1.7;
-}
-
-/* Main text container */
+/* Main container */
 #passages {
   max-width: 750px;
   margin: auto;
@@ -193,7 +126,6 @@ tw-story {
   border-radius: 14px;
   padding: 50px;
   box-shadow: 0 0 40px rgba(0,0,0,0.6);
-  transform: perspective(1000px);
 }
 
 /* Links */
@@ -201,24 +133,19 @@ a {
   color: #d6b46d;
   text-decoration: none;
   transition: all 0.3s ease;
-  position: relative;
 }
 
 a:hover {
   color: #ffffff;
-  letter-spacing: 0.5px;
-  text-shadow: 0 0 8px rgba(214, 180, 109, 0.6);
+  text-shadow: 0 0 8px rgba(214,180,109,0.6);
 }
 
-/* PASSAGE = SCENE */
+/* PASSAGE ANIMATION */
 tw-passage {
   display: block;
-  min-height: 60vh;
-  opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
 }
 
-/* Fade animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -230,29 +157,25 @@ tw-passage {
   }
 }
 
-/* IMAGE BASE */
+/* IMAGES */
 img {
   width: 100%;
   max-width: 900px;
   display: block;
   margin: 40px auto;
   border-radius: 12px;
-
-  /* cinematic feel */
   box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+
+  filter: grayscale(30%) contrast(1.05);
+  opacity: 0;
+  animation: imgFade 1.2s ease forwards;
   transition: all 0.5s ease;
 }
 
-/* HOVER ZOOM */
 img:hover {
   transform: scale(1.02);
+  filter: grayscale(0%) contrast(1.1);
   box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-}
-
-/* FADE-IN */
-img {
-  opacity: 0;
-  animation: imgFade 1.2s ease forwards;
 }
 
 @keyframes imgFade {
@@ -266,39 +189,44 @@ img {
   }
 }
 
-/* CINEMATIC DARK OVERLAY */
-img::after {
-  content: "";
-  position: absolute;
-  inset: 0;
+/* HEADINGS */
+h1 {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  margin: 10px 0;
+  border-left: 3px solid transparent;
+  color: #4aa3ff;
 }
 
-/* IMAGE CONTAINER FEEL */
-tw-passage img {
-  position: relative;
+h1:hover {
+  color: #ffffff;
+  border-left: 3px solid #4aa3ff;
+  transform: translateX(8px);
+  text-shadow: 0 0 15px rgba(74, 163, 255, 0.7);
+  background: linear-gradient(90deg, rgba(74,163,255,0.15), transparent);
 }
 
-/* BLACK & WHITE + COLOR ON HOVER */
-img {
-  filter: grayscale(30%) contrast(1.05);
-}
-
-img:hover {
-  filter: grayscale(0%) contrast(1.1);
-}
-
-/* CAPTION STYLING */
-img + br + span,
-img + em {
-  display: block;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #aaa;
-  margin-top: -20px;
-  margin-bottom: 30px;
+/* CAPTION */
+.caption {
+  font-size: 1em;
+  color: rgba(220, 230, 240, 0.78);
+  margin: 0 0 20px 14px;
+  line-height: 1.55;
   font-style: italic;
+  max-width: 780px;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.addVisitedLinkClass = true;</script><tw-passagedata pid="1" name="Start.1" tags="" position="75,475" size="100,100">You are about to walk through 70 million years of Maastricht.
+
+#ui-bar {
+  display: none !important;
+}
+
+#story {
+  margin-left: 0 !important;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.addVisitedLinkClass = true;</script><tw-passagedata pid="1" name="Start.1" tags="" position="75,475" size="100,100">&lt;h1&gt;Start&lt;/h1&gt;
+&lt;p class=&quot;caption&quot;&gt;
+A guided sound walk through 70 million years of Maastricht, from quarry to cemetery - where geology and memory overlap.&lt;/p&gt;
+You are about to walk through 70 million years of Maastricht.
 A sound walk from the ENCI Quarry to the Tongerseweg Cemetery.
 Where stones remember, and bones remain.
 The Long Memory of Maastricht.
@@ -319,8 +247,10 @@ You can pause and continue at any time
 
 [[What is this experience? -&gt;Walk Description]]
 
-[[Route &amp; Schedule (90–120 min) -&gt;Walk Pacing]]</tw-passagedata><tw-passagedata pid="2" name="Stop1" tags="" position="200,625" size="100,100">ENCI Entrance
-
+[[Route &amp; Schedule (90–120 min) -&gt;Walk Pacing]]</tw-passagedata><tw-passagedata pid="2" name="Stop1" tags="" position="200,625" size="100,100">&lt;h1&gt;ENCI Entrance&lt;/h1&gt;
+&lt;p class=&quot;caption&quot;&gt;
+The edge of the ENCI quarry - where industrial extraction exposed deep geological time beneath Maastricht.
+&lt;/p&gt;
 &lt;audio controls style=&quot;width:100%&quot;&gt;
   &lt;source src=&quot;stop1audio.mp3&quot; type=&quot;audio/mp3&quot;&gt;
 &lt;/audio&gt;
@@ -351,8 +281,10 @@ This is where the walk begins.
 
 [[Go to viewpoint -&gt;Stop2]]
 
-[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="3" name="Stop2" tags="" position="325,500" size="100,100">The Viewing Platform
-
+[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="3" name="Stop2" tags="" position="325,500" size="100,100">&lt;h1&gt;The Viewing Platform&lt;/h1&gt;
+&lt;p class=&quot;caption&quot;&gt;
+A panoramic point where the quarry reveals itself as vertical time - layers of Maastrichtian limestone exposed by extraction.
+&lt;/p&gt;
 Audio 
 
 &lt;img src=&quot;https://www.visitzuidlimburg.com/mxms/media/9a68e0d8-ac3b-4da6-a64d-3ca3ba0b43dd?size=800x800&quot; style=&quot;width:100%; max-width:900px; display:block; margin:20px auto;&quot;&gt;
@@ -374,8 +306,10 @@ When you&#39;re ready, follow the rim path forward.
 
 [[Descend into geology -&gt;Stop3]]
 
-[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="4" name="Stop3" tags="" position="375,650" size="100,100">ENCI Geology
-
+[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="4" name="Stop3" tags="" position="375,650" size="100,100">&lt;h1&gt;ENCI Geology&lt;/h1&gt;
+&lt;p class=&quot;caption&quot;&gt;
+Walking along exposed limestone walls and flint layers that record ancient marine life from a 70-million-year-old seabed.
+&lt;/p&gt;
 (audio)
 
 &lt;img src=&quot;https://assets.plaece.nl/thumb/sF7VcVpvHH_p3tPelklwFwYzWHhLvbvGxkchugJDFzc/resizing_type:fit/width:1900/height:0/gravity:sm/enlarge:0/aHR0cHM6Ly9hc3NldHMucGxhZWNlLm5sL29kcC12dnZtYWFzdHJpY2h0L2ltYWdlL2VuY2ktZ3JvZXZlLXBhZC1tYWFzdHJpY2h0LW1haXNvbi1yb3dlbmFfMjg1NjQzMzk5Ny5qcGc.webp&quot; style=&quot;width:100%; max-width:900px;&quot;&gt;
@@ -402,8 +336,10 @@ It becomes a sequence of fragments.
 
 [[Continue to fossil discovery -&gt;Stop4]]
 
-[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="5" name="Stop5" tags="" position="550,650" size="100,100">ENCI OwlValley
-
+[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="5" name="Stop5" tags="" position="550,650" size="100,100">&lt;h1&gt;ENCI OwlValley&lt;/h1&gt;
+&lt;p class=&quot;caption&quot;&gt;
+A former industrial zone transformed into habitat, where eagle owls returned and now breed in the quarry walls.
+&lt;/p&gt;
 Audio 
 [sound: wind softens / distant birds / occasional owl call]
 
@@ -424,8 +360,10 @@ Today, the species still breeds here. At dusk or early morning, you might hear i
 
 [[Walk to new nature zone -&gt;Stop6]]
 
-[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="6" name="Stop6" tags="" position="600,500" size="100,100">ENCI NewNature
-
+[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="6" name="Stop6" tags="" position="600,500" size="100,100">&lt;h1&gt;ENCI NewNature&lt;/h1&gt;
+&lt;p class=&quot;caption&quot;&gt;
+A post-industrial landscape where water, plants, and wildlife gradually re-establish a new ecological system.
+&lt;/p&gt;
 Audio 
 [sound: water, frogs, light wind through vegetation]
 &lt;img src=&quot;https://www.bouwmachinesvantoen-archief.nl/bedrijvenpagina/Enci/9001-021-enci.groeve.199-.jpg&quot; style=&quot;width:100%; max-width:900px;&quot;&gt;
@@ -469,7 +407,10 @@ It is becoming something new.
 
 [[Continue -&gt;Stop7]]
 
-[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="7" name="Stop8" tags="" position="850,650" size="100,100">The Cemetery As A City Archive
+[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="7" name="Stop8" tags="" position="850,650" size="100,100">&lt;h1&gt;The Cemetery As A City Archive&lt;/h1&gt;
+&lt;p class=&quot;caption&quot;&gt;
+A structured landscape of memory where stone, hierarchy, and architecture record the social order of Maastricht.
+&lt;/p&gt;
 Audio
 
 A cemetery is a document.
@@ -540,7 +481,10 @@ It mirrors it - in stone, in hierarchy, and in absence.
 
 [[Enter cemetery space -&gt;Stop9]]
 
-[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="8" name="Stop9" tags="" position="1075,500" size="100,100">The Chapel
+[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="8" name="Stop9" tags="" position="1075,500" size="100,100">&lt;h1&gt;The Chapel&lt;/h1&gt;
+&lt;p class=&quot;caption&quot;&gt;
+A ritual space shaped by 19th-century Catholic architecture, where belief and mourning are spatially organized.
+&lt;/p&gt;
 Audio
 SOUND:
 wind through trees / soft footsteps / distant birds / low ambient stillness
@@ -602,7 +546,10 @@ About what cannot be seen, but is still addressed.
 You’ve finished Part One.
 No audio stop here - this is a transition section.
 
-INTERLUDE - THE WALK BETWEEN
+&lt;h1&gt;INTERLUDE - THE WALK BETWEEN&lt;/h1&gt;
+&lt;p class=&quot;caption&quot;&gt;
+A transition through the city - moving from geological extraction to civic memory between quarry and cemetery.
+&lt;/p&gt;
 
 From the D&#39;n Observant exit, the walk to the Tongerseweg cemetery is approximately 2.5–3 km.
 You pass through the suburb of Sint Pieter and continue northwest toward Maastricht-West.
@@ -617,7 +564,12 @@ Before continuing, look back once more toward the quarry.
 
 [[Continue -&gt;Stop7]]
 
-[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="10" name="Notable Graves" tags="" position="925,500" size="100,100">This section is not a stop, but a transition.
+[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="10" name="Notable Graves" tags="" position="925,500" size="100,100">&lt;h1&gt;Notable Graves&lt;/h1&gt;
+&lt;p class=&quot;caption&quot;&gt;
+Individual monuments revealing layers of industrial power, law, war, and institutional memory within the cemetery.
+&lt;/p&gt;
+
+This section is not a stop, but a transition.
 
 A layer within the cemetery where individual monuments begin to speak more directly about power, belief, and history.
 &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/2019-Algemene_Begraafplaats_Tongerseweg_%2840%29.jpg/960px-2019-Algemene_Begraafplaats_Tongerseweg_%2840%29.jpg&quot; style=&quot;width:100%; max-width:900px;&quot;&gt;
@@ -655,7 +607,10 @@ But all of them remain within the same system - the cemetery as a city archive.
 
 [[Enter cemetery space -&gt;Stop9]]
 
-[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="11" name="Stop4" tags="" position="450,500" size="100,100">ENCI Mosasaurus
+[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="11" name="Stop4" tags="" position="450,500" size="100,100">&lt;h1&gt;ENCI Mosasaurus&lt;/h1&gt;
+&lt;p class=&quot;caption&quot;&gt;
+The site where Mosasaurus fossils reshaped scientific understanding of extinction and deep geological time.
+&lt;/p&gt;
 
 Audio 
 [sound: low wind, deep silence]
@@ -708,7 +663,10 @@ It produces it.
 
 [[Move toward owl valley -&gt;Stop5]]
 
-[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="12" name="Stop7" tags="" position="775,500" size="100,100">The Tongerseweg Gate / Entrance
+[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="12" name="Stop7" tags="" position="775,500" size="100,100">&lt;h1&gt;The Tongerseweg Gate / Entrance&lt;/h1&gt;
+&lt;p class=&quot;caption&quot;&gt;
+A boundary shaped by 19th-century urban reform, separating the living city from its formal space of the dead.
+&lt;/p&gt;
 Audio
 [sound: birds fading / footsteps on gravel / faint city hum emerging]
 &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/5/5d/Maastricht_-_rijksmonument_27990_-_Tongerseweg_292_20100731.jpg&quot; style=&quot;width:100%; max-width:900px;&quot;&gt;
@@ -745,7 +703,10 @@ When you are ready, pass through the gate.
 
 [[Enter cemetery -&gt;Stop8]]
 
-[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="13" name="Stop10" tags="" position="1200,500" size="100,100">The Mammoetboom
+[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="13" name="Stop10" tags="" position="1200,500" size="100,100">&lt;h1&gt;The Mammoetboom&lt;/h1&gt;
+&lt;p class=&quot;caption&quot;&gt;
+A living giant sequoia planted among graves - a rare living monument linking European memory culture to global botanical history.
+&lt;/p&gt;
 Audio
 SOUND:
 soft echo / pigeons / enclosed air / distant wind outside walls
@@ -825,7 +786,7 @@ There is no hurry.
 
 The walk ends, but the story continues.
 
-[[Restart the walk -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="15" name="Walk Description" tags="" position="0,850" size="100,100">Walk Description
+[[Restart the walk -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="15" name="Walk Description" tags="" position="0,850" size="100,100">&lt;h1&gt;Walk Description&lt;/h1&gt;
 
 Stones, Bones &amp; the Long Memory of Maastricht is a 4-5 km sound walk from the ENCI Quarry to the Tongerseweg Cemetery.
 
@@ -837,7 +798,7 @@ Along the way, audio guides you through moments of geology, industry, extinction
 
 The experience is open to a general audience and presented in English, with a Dutch version to follow. All stops are currently accessible via public paths, with some adapted viewpoints from the quarry rim until full interior access becomes available in 2026.
 
-[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="16" name="Walk Pacing" tags="" position="125,875" size="100,100">Guided Walk Pacing
+[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="16" name="Walk Pacing" tags="" position="125,875" size="100,100">&lt;h1&gt;Guided Walk Pacing&lt;/h1&gt;
 
 This route is structured as a guided audio walk with spatial and narrative pacing.
 
