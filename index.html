@@ -105,7 +105,13 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
 	<tw-storydata name="Project: Stones, Bones &amp; the Long Memory of Maastricht" startnode="1" creator="Twine" creator-version="2.12.0" format="SugarCube" format-version="2.37.3" ifid="2A1E2283-5927-4319-BC3C-B6789B16E8D7" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
-  background-color: #0b0c10;
+  background: linear-gradient(
+    180deg,
+    #2b1f1a 0%,
+    #3a2a22 45%,
+    #1f1612 100%
+  );
+
   color: #e8e6e3;
   font-family: Georgia, serif;
   line-height: 1.7;
@@ -237,7 +243,7 @@ a:visited,
 a:active {
   transform: scale(0.98);
   color: #c9b38a;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.addVisitedLinkClass = true;</script><tw-passagedata pid="1" name="Start.1" tags="" position="75,475" size="100,100">&lt;h1&gt;Start&lt;/h1&gt;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.addVisitedLinkClass = true;</script><tw-passagedata pid="1" name="Start.1" tags="" position="75,475" size="100,100">&lt;h1&gt;The Long Memory of Maastricht&lt;/h1&gt;
 &lt;p class=&quot;caption&quot;&gt;
 A guided sound walk through 70 million years of Maastricht, from quarry to cemetery - where geology and memory overlap.&lt;/p&gt;
 You are about to walk through 70 million years of Maastricht.
@@ -245,10 +251,8 @@ A sound walk from the ENCI Quarry to the Tongerseweg Cemetery.
 Where stones remember, and bones remain.
 The Long Memory of Maastricht.
 
-
 This is a guided audio walk.
 A landscape read through time, geology, and memory.
-
 
 Practical information:
 
@@ -257,11 +261,11 @@ Best experienced with headphones
 You can pause and continue at any time
 
 
-[[Begin the walk -&gt;Stop1]]
+[[Begin the Walk - Part 1 -&gt;Stop1]]
 
 [[What is this experience? -&gt;Walk Description]]
 
-[[Route &amp; Schedule (90–120 min) -&gt;Walk Pacing]]</tw-passagedata><tw-passagedata pid="2" name="Stop1" tags="" position="200,625" size="100,100">&lt;h1&gt;ENCI Entrance&lt;/h1&gt;
+[[Route &amp; Schedule (90-120 min) -&gt;Walk Pacing]]</tw-passagedata><tw-passagedata pid="2" name="Stop1" tags="" position="200,625" size="100,100">&lt;h1&gt;ENCI Entrance&lt;/h1&gt;
 &lt;p class=&quot;caption&quot;&gt;
 The edge of the ENCI quarry - where industrial extraction exposed deep geological time beneath Maastricht.
 &lt;/p&gt;
@@ -290,7 +294,6 @@ What looked like stability became extraction.
 And what remains now is not emptiness -
 but time made visible.
 Seventy million years of geology, cut open like a book.
-
 This is where the walk begins.
 
 [[Go to viewpoint -&gt;Stop2]]
@@ -319,6 +322,8 @@ And somewhere below, a staircase descends into it - 215 steps into geological ti
 When you&#39;re ready, follow the rim path forward.
 
 [[Descend into geology -&gt;Stop3]]
+
+[[Back -&gt;Stop1]]
 
 [[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="4" name="Stop3" tags="" position="375,650" size="100,100">&lt;h1&gt;ENCI Geology&lt;/h1&gt;
 &lt;p class=&quot;caption&quot;&gt;
@@ -350,6 +355,8 @@ It becomes a sequence of fragments.
 
 [[Continue to fossil discovery -&gt;Stop4]]
 
+[[Back -&gt;Stop2]]
+
 [[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="5" name="Stop5" tags="" position="550,650" size="100,100">&lt;h1&gt;ENCI OwlValley&lt;/h1&gt;
 &lt;p class=&quot;caption&quot;&gt;
 A former industrial zone transformed into habitat, where eagle owls returned and now breed in the quarry walls.
@@ -373,6 +380,8 @@ ENCI stopped work in this northern section earlier than planned to protect the b
 Today, the species still breeds here. At dusk or early morning, you might hear its low, resonant call.
 
 [[Walk to new nature zone -&gt;Stop6]]
+
+[[Back -&gt;Stop4]]
 
 [[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="6" name="Stop6" tags="" position="600,500" size="100,100">&lt;h1&gt;ENCI NewNature&lt;/h1&gt;
 &lt;p class=&quot;caption&quot;&gt;
@@ -414,12 +423,13 @@ Some will be preserved.
 That decision is still being made.
 What is certain is this:
 This place is not returning to what it was before.
-
 It is becoming something new.
 
-[[Continue walk to cemetery transition -&gt;INTERLUDE - THE WALK BETWEEN]]
+[[Transition to Part 2 -&gt;INTERLUDE - THE WALK BETWEEN]]
 
-[[Continue -&gt;Stop7]]
+[[Begin the Walk - Part 2 -&gt;Stop7]]
+
+[[Back -&gt;Stop5]]
 
 [[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="7" name="Stop8" tags="" position="850,650" size="100,100">&lt;h1&gt;The Cemetery As A City Archive&lt;/h1&gt;
 &lt;p class=&quot;caption&quot;&gt;
@@ -493,7 +503,9 @@ It mirrors it - in stone, in hierarchy, and in absence.
 
 [[Optional detours -&gt;Notable Graves]]
 
-[[Enter cemetery space -&gt;Stop9]]
+[[Back -&gt;Stop7]]
+
+[[The Chapel -&gt;Stop9]]
 
 [[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="8" name="Stop9" tags="" position="1075,500" size="100,100">&lt;h1&gt;The Chapel&lt;/h1&gt;
 &lt;p class=&quot;caption&quot;&gt;
@@ -554,29 +566,41 @@ It is about belief.
 
 About what cannot be seen, but is still addressed.
 
-[[Enter chapel -&gt;Stop10]]
+[[The Mammoetboom -&gt;Stop10]]
 
-[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="9" name="INTERLUDE - THE WALK BETWEEN" tags="" position="675,650" size="100,100">
-You’ve finished Part One.
-No audio stop here - this is a transition section.
+[[Back -&gt;Stop8]]
 
-&lt;h1&gt;INTERLUDE - THE WALK BETWEEN&lt;/h1&gt;
+[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="9" name="INTERLUDE - THE WALK BETWEEN" tags="" position="675,650" size="100,100">&lt;h1&gt;Between the Quarry and the Cemetery&lt;/h1&gt;
 &lt;p class=&quot;caption&quot;&gt;
-A transition through the city - moving from geological extraction to civic memory between quarry and cemetery.
+A transition through Maastricht - moving from geological extraction to civic memory.
 &lt;/p&gt;
 
-From the D&#39;n Observant exit, the walk to the Tongerseweg cemetery is approximately 2.5–3 km.
-You pass through the suburb of Sint Pieter and continue northwest toward Maastricht-West.
+&lt;h2 style=&quot;text-align:center; margin-top:30px; color:#d6b46d;&quot;&gt;
+You’ve finished Part 1.
+&lt;/h2&gt;
+
+There is no audio stop here.
+This section connects the ENCI quarry to the Tongerseweg Cemetery, where Part 2 of the walk begins.
+
+From the D&#39;n Observant exit, the route to the cemetery is approximately 2.5–3 km.
+You will pass through the suburb of Sint Pieter and continue northwest toward Maastricht-West.
 
 Alternative routes:
-- Bus line 12 from Sint Pieter towards Maastricht Centraal, then transfer to line 3 or 57 toward the cemetery area.  
-- Cyclists can follow the Maas north along Lage Kanaaldijk and turn west into the city.
+• Bus line 12 from Sint Pieter toward Maastricht Centraal, then transfer to line 3 or 57 toward the cemetery area.  
+• Cyclists can follow the Maas north along Lage Kanaaldijk before turning west into the city.
 
-This is about 30 minutes on foot or 10 minutes by bus.
+Estimated travel time:
+• 30 minutes on foot  
+• 10 minutes by bus
+
 Take a short break if needed.
-Before continuing, look back once more toward the quarry.
+Before leaving, look back once more toward the quarry.
 
-[[Continue -&gt;Stop7]]
+The next section shifts from geological time to urban memory.
+
+[[Begin the Walk - Part 2 -&gt;Stop7]]
+
+[[Back -&gt;Stop6]]
 
 [[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="10" name="Notable Graves" tags="" position="925,500" size="100,100">&lt;h1&gt;Notable Graves&lt;/h1&gt;
 &lt;p class=&quot;caption&quot;&gt;
@@ -619,7 +643,9 @@ Each monument is a different language of permanence.
 
 But all of them remain within the same system - the cemetery as a city archive.
 
-[[Enter cemetery space -&gt;Stop9]]
+[[The Chapel -&gt;Stop9]]
+
+[[Back -&gt;Stop8]]
 
 [[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="11" name="Stop4" tags="" position="450,500" size="100,100">&lt;h1&gt;ENCI Mosasaurus&lt;/h1&gt;
 &lt;p class=&quot;caption&quot;&gt;
@@ -677,6 +703,8 @@ It produces it.
 
 [[Move toward owl valley -&gt;Stop5]]
 
+[[Back -&gt;Stop3]]
+
 [[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="12" name="Stop7" tags="" position="775,500" size="100,100">&lt;h1&gt;The Tongerseweg Gate / Entrance&lt;/h1&gt;
 &lt;p class=&quot;caption&quot;&gt;
 A boundary shaped by 19th-century urban reform, separating the living city from its formal space of the dead.
@@ -716,6 +744,8 @@ A line between the living city and the space of the dead.
 When you are ready, pass through the gate.
 
 [[Enter cemetery -&gt;Stop8]]
+
+[[Back -&gt;Stop6]]
 
 [[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="13" name="Stop10" tags="" position="1200,500" size="100,100">&lt;h1&gt;The Mammoetboom&lt;/h1&gt;
 &lt;p class=&quot;caption&quot;&gt;
@@ -796,9 +826,14 @@ There is no hurry.
 
 [[Go to final stop -&gt;End]]
 
-[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="14" name="End" tags="" position="1350,500" size="100,100">You have moved through quarry, fossil, city, and tree - through deep time layered onto one landscape.
+[[Back -&gt;Stop9]]
+
+[[Home -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="14" name="End" tags="" position="1350,500" size="100,100">&lt;h1&gt;What Remains&lt;/h1&gt;
+You have moved through quarry, fossil, city, and tree - through deep time layered onto one landscape.
 
 The walk ends, but the story continues.
+
+[[Back -&gt;Stop10]]
 
 [[Restart the walk -&gt;Start.1]]</tw-passagedata><tw-passagedata pid="15" name="Walk Description" tags="" position="0,850" size="100,100">&lt;h1&gt;Walk Description&lt;/h1&gt;
 
